@@ -2,14 +2,14 @@ package com.shikhar.cinema.model;
 
 public class Movie {
 
-    String mName;
-    String mDescription;
-    String mDuration;
-    double mRating;
-    int mThumbnailImage;
-    String mVideoUrl1;
-    String mVideoUrl2;
-    String mVideoUrl3;
+    private String mName;
+    private String mDescription;
+    private String mDuration;
+    private double mRating;
+    private int mThumbnailImage;
+    private String mVideoUrl1;
+    private String mVideoUrl2;
+    private String mVideoUrl3;
 
     public Movie(String mName, String mDescription, String mDuration, double mRating, int mThumbnailImage, String mVideoUrl1, String mVideoUrl2, String mVideoUrl3) {
         this.mName = mName;

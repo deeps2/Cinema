@@ -1,15 +1,17 @@
 package com.shikhar.cinema;
 
 import com.shikhar.cinema.model.Movie;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.List;
 
-class InTheatersAdapter extends RecyclerView.Adapter<InTheatersAdapter.InTheatersViewHolder>{
+class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolder> {
 
     private List<Movie> mInTheaterMovieList;
 
@@ -18,14 +20,14 @@ class InTheatersAdapter extends RecyclerView.Adapter<InTheatersAdapter.InTheater
         ImageView poster;
         TextView moviename;
 
-        public InTheatersViewHolder(View v){
+        public InTheatersViewHolder(View v) {
             super(v);
-            poster = (ImageView)v.findViewById(R.id.poster);
-            moviename = (TextView)v.findViewById(R.id.name);
+            poster = (ImageView) v.findViewById(R.id.poster);
+            moviename = (TextView) v.findViewById(R.id.name);
         }
     }
 
-    public InTheatersAdapter(List<Movie> list){
+    public MovieAdapter(List<Movie> list) {
         this.mInTheaterMovieList = list;
     }
 
@@ -43,8 +45,7 @@ class InTheatersAdapter extends RecyclerView.Adapter<InTheatersAdapter.InTheater
 
     @Override
     public int getItemCount() {
-        return mInTheaterMovieList.size() ;
+        return mInTheaterMovieList.size();
     }
-
 
 }

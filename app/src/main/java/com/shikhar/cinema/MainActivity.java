@@ -1,6 +1,7 @@
 package com.shikhar.cinema;
 
 import com.shikhar.cinema.model.Movie;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mInTheaterRecyclerView;
     RecyclerView mUpComingRecyclerView;
 
-    InTheatersAdapter mInTheatersAdapter;
-    InTheatersAdapter mUpcomingAdapter;
+    MovieAdapter mMovieAdapter;
+    MovieAdapter mUpcomingAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +28,30 @@ public class MainActivity extends AppCompatActivity {
 
         addSampleContent();
 
-        mInTheaterRecyclerView = (RecyclerView)findViewById(R.id.in_theaters);
+        //setting top recycler view (In Theaters)
+        mInTheaterRecyclerView = (RecyclerView) findViewById(R.id.in_theaters);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
         mInTheaterRecyclerView.setLayoutManager(gridLayoutManager);
 
-        mInTheatersAdapter = new InTheatersAdapter(mInTheaterMovieList);
-        mInTheaterRecyclerView.setAdapter(mInTheatersAdapter);
+        mMovieAdapter = new MovieAdapter(mInTheaterMovieList);
+        mInTheaterRecyclerView.setAdapter(mMovieAdapter);
         mInTheaterRecyclerView.setHasFixedSize(true);
 
 
-
-        mUpComingRecyclerView = (RecyclerView)findViewById(R.id.upcoming);
+        //setting bottom recycler view (Upcoming Movies )
+        mUpComingRecyclerView = (RecyclerView) findViewById(R.id.upcoming);
 
         GridLayoutManager gridLayoutManager2 = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
         mUpComingRecyclerView.setLayoutManager(gridLayoutManager2);
 
-        mUpcomingAdapter = new InTheatersAdapter(mUpComingMovieList);
+        mUpcomingAdapter = new MovieAdapter(mUpComingMovieList);
         mUpComingRecyclerView.setAdapter(mUpcomingAdapter);
         mUpComingRecyclerView.setHasFixedSize(true);
 
     }
 
-    void addSampleContent(){
+    void addSampleContent() {
 
         mInTheaterMovieList.add(new Movie("Rogue One",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
@@ -142,94 +144,94 @@ public class MainActivity extends AppCompatActivity {
                 "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 11",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 12",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 13",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 14",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 15",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 16",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 17",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 18",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 19",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
         mUpComingMovieList.add(new Movie("Rogue One 20",
-                                              "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
-                                              "133 min",
-                                              8.2,
-                                      R.drawable.rogueone,
-                                      "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
-                                              "https://www.youtube.com/watch?v=sC9abcLLQpI",
-                                              "https://www.youtube.com/watch?v=eUmcneReow8"));
+                "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
+                "133 min",
+                8.2,
+                R.drawable.rogueone,
+                "https://www.youtube.com/watch?v=Wji-BZ0oCwg",
+                "https://www.youtube.com/watch?v=sC9abcLLQpI",
+                "https://www.youtube.com/watch?v=eUmcneReow8"));
 
     }
 

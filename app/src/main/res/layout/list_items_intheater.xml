@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_margin="8dp"
@@ -18,6 +17,7 @@
             android:id="@+id/poster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/rogueone" />
 
@@ -30,8 +30,9 @@
         android:layout_marginLeft="24dp"
         android:fontFamily="sans-serif-light"
         android:text="Rogue One"
-        android:textColor="#000000"
-        android:textSize="16sp" />
+        android:textColor="#E3F2FD"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
 

@@ -44,7 +44,8 @@ I should have moved all the hardcoding to respective resource files but I didn't
 - RecyclerView
 - GridLayout
 - CardView
-- Custom ArrayAdapter
+- POJO Model class for storing Movie details(name,summary, rating etc.)
+- RecyclerView.Adapter and ViewHolder
 - YouTube API
 
 <b> Hope You'll like it :-)

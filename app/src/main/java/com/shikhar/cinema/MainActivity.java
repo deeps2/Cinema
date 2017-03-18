@@ -8,6 +8,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,150 +54,145 @@ public class MainActivity extends AppCompatActivity {
 
     void addSampleContent() {
 
-        List<String> trailerlist = new ArrayList<>();
-        trailerlist.add("Wji-BZ0oCwg");
-        trailerlist.add("sC9abcLLQpI");
-        trailerlist.add("eUmcneReow8");
-
         mInTheaterMovieList.add(new Movie("Rogue One",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 2",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 3",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 4",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 5",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 6",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 7",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 8",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 9",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mInTheaterMovieList.add(new Movie("Rogue One 10",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                4.2f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 11",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 12",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 13",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 14",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 15",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 16",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 17",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 18",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 19",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
         mUpComingMovieList.add(new Movie("Rogue One 20",
                 "The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.",
                 "133 min",
-                8.2,
+                -1.0f,
                 R.drawable.rogueone,
-                trailerlist));
+                Arrays.asList("Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8","Wji-BZ0oCwg","sC9abcLLQpI","eUmcneReow8")));
 
     }
 

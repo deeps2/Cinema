@@ -16,7 +16,7 @@ import java.util.List;
 class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolder> {
 
     private List<Movie> mInTheaterMovieList;
-    Context context;
+    private Context context;
 
     public static class InTheatersViewHolder extends RecyclerView.ViewHolder {
 
@@ -37,20 +37,22 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
 
     @Override
     public InTheatersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items_intheater, parent, false);
         return new InTheatersViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(InTheatersViewHolder holder, final int position) {
+
         holder.poster.setImageResource(mInTheaterMovieList.get(position).getmThumbnailImage());
         holder.moviename.setText(mInTheaterMovieList.get(position).getmName());
 
         holder.poster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context,MovieDetailActivity.class);
-                i.putExtra("CLICKED_MOVIE",mInTheaterMovieList.get(position));
+                Intent i = new Intent(context, MovieDetailActivity.class);
+                i.putExtra("CLICKED_MOVIE", mInTheaterMovieList.get(position));
                 context.startActivity(i);
             }
         });

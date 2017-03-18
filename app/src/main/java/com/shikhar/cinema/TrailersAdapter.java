@@ -1,7 +1,6 @@
 package com.shikhar.cinema;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.shikhar.cinema.model.Movie;
+
 import java.util.List;
 
-import static android.R.id.list;
-import static android.os.Build.VERSION_CODES.M;
 import static com.shikhar.cinema.R.id.trailer_thumbnail;
 import static com.shikhar.cinema.R.id.trialer_no;
 
@@ -23,8 +20,7 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.InThea
     private List<String> mTrailersLinks;
     private int mThumbnailImage;
     private YouTubePlayerView youTubeView;
-    Context context;
-    MovieDetailActivity activity;
+    private MovieDetailActivity activity;
 
     public static class InTheatersViewHolder extends RecyclerView.ViewHolder {
 
@@ -34,14 +30,13 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.InThea
         public InTheatersViewHolder(View v) {
             super(v);
             thumbnail = (ImageView) v.findViewById(trailer_thumbnail);
-            trailerNo = (TextView)v.findViewById(trialer_no);
+            trailerNo = (TextView) v.findViewById(trialer_no);
         }
     }
 
-    public TrailersAdapter(List<String> trailerLinks, int mThumbnailImage ,Context context, YouTubePlayerView v) {
+    public TrailersAdapter(List<String> trailerLinks, int mThumbnailImage, Context context, YouTubePlayerView v) {
         this.mTrailersLinks = trailerLinks;
-        this.context = context;
-        this.activity = (MovieDetailActivity)context;
+        this.activity = (MovieDetailActivity) context;
         this.mThumbnailImage = mThumbnailImage;
         this.youTubeView = v;
     }
@@ -61,8 +56,6 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.InThea
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //play - mTrailersLinks.get(position);
-               //open youtube api, unhide it in activity_movie_detail.xml
                 youTubeView.setVisibility(View.VISIBLE);
                 activity.initialisation(mTrailersLinks.get(position));
             }

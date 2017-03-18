@@ -1,5 +1,6 @@
 package com.shikhar.cinema;
 
+import com.bumptech.glide.Glide;
 import com.shikhar.cinema.model.Movie;
 
 import android.content.Context;
@@ -45,7 +46,8 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
     @Override
     public void onBindViewHolder(InTheatersViewHolder holder, final int position) {
 
-        holder.poster.setImageResource(mInTheaterMovieList.get(position).getmThumbnailImage());
+        Glide.with(context).load(mInTheaterMovieList.get(position).getmThumbnailImage()).into(holder.poster);
+
         holder.movieName.setText(mInTheaterMovieList.get(position).getmName());
 
         holder.poster.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,8 @@ package com.shikhar.cinema;
 
 import com.shikhar.cinema.model.Movie;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import java.util.List;
 class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolder> {
 
     private List<Movie> mInTheaterMovieList;
+    Context context;
 
     public static class InTheatersViewHolder extends RecyclerView.ViewHolder {
 
@@ -27,8 +30,9 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
         }
     }
 
-    public MovieAdapter(List<Movie> list) {
+    public MovieAdapter(List<Movie> list, Context context) {
         this.mInTheaterMovieList = list;
+        this.context = context;
     }
 
     @Override
@@ -38,9 +42,18 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
     }
 
     @Override
-    public void onBindViewHolder(InTheatersViewHolder holder, int position) {
+    public void onBindViewHolder(InTheatersViewHolder holder, final int position) {
         holder.poster.setImageResource(mInTheaterMovieList.get(position).getmThumbnailImage());
         holder.moviename.setText(mInTheaterMovieList.get(position).getmName());
+
+        holder.poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context,MovieDetailActivity.class);
+                i.putExtra("CLICKED_MOVIE",mInTheaterMovieList.get(position));
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override

@@ -1,25 +1,30 @@
 package com.shikhar.cinema.model;
 
-public class Movie {
+import java.io.Serializable;
+import java.util.List;
+
+public class Movie implements Serializable{
 
     private String mName;
     private String mDescription;
     private String mDuration;
     private double mRating;
     private int mThumbnailImage;
-    private String mVideoUrl1;
-    private String mVideoUrl2;
-    private String mVideoUrl3;
+   // private String mVideoUrl1;
+   // private String mVideoUrl2;
+   // private String mVideoUrl3;
+    private List<String> mVideoUrls;
 
-    public Movie(String mName, String mDescription, String mDuration, double mRating, int mThumbnailImage, String mVideoUrl1, String mVideoUrl2, String mVideoUrl3) {
+    public Movie(String mName, String mDescription, String mDuration, double mRating, int mThumbnailImage, /*String mVideoUrl1, String mVideoUrl2, String mVideoUrl3,*/List<String> mVideoUrls) {
         this.mName = mName;
         this.mDescription = mDescription;
         this.mDuration = mDuration;
         this.mRating = mRating;
         this.mThumbnailImage = mThumbnailImage;
-        this.mVideoUrl1 = mVideoUrl1;
-        this.mVideoUrl2 = mVideoUrl2;
-        this.mVideoUrl3 = mVideoUrl3;
+       // this.mVideoUrl1 = mVideoUrl1;
+       // this.mVideoUrl2 = mVideoUrl2;
+       // this.mVideoUrl3 = mVideoUrl3;
+        this.mVideoUrls = mVideoUrls;
     }
 
     public double getmRating() {
@@ -37,7 +42,7 @@ public class Movie {
     public void setmThumbnailImage(int mThumbnailImage) {
         this.mThumbnailImage = mThumbnailImage;
     }
-
+    /*
     public String getmVideoUrl1() {
         return mVideoUrl1;
     }
@@ -61,7 +66,7 @@ public class Movie {
     public void setmVideoUrl3(String mVideoUrl3) {
         this.mVideoUrl3 = mVideoUrl3;
     }
-
+*/
     public String getmName() {
         return mName;
     }
@@ -92,5 +97,13 @@ public class Movie {
 
     public void setRating(double rating) {
         this.mRating = rating;
+    }
+
+    public List<String> getmVideoUrls() {
+        return mVideoUrls;
+    }
+
+    public void setmVideoUrls(List<String> mVideoUrls) {
+        this.mVideoUrls = mVideoUrls;
     }
 }

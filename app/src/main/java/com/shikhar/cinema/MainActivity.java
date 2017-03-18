@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 "118 min",
                 4.0f,
                 R.drawable.lion,
-                Arrays.asList("RNI9o06vqo","D_dD5mDssT0","IHdw7XxqTq8","j8juIIPT_jI")));
+                Arrays.asList("-RNI9o06vqo","D_dD5mDssT0","IHdw7XxqTq8","j8juIIPT_jI")));
 
         mUpComingMovieList.add(new Movie("Wonder Woman",
                 "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. ",

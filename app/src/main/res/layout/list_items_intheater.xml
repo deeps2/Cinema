@@ -29,7 +29,6 @@
         android:layout_height="25dp"
         android:layout_marginLeft="24dp"
         android:fontFamily="sans-serif-light"
-        android:text="Rogue One"
         android:textColor="#E3F2FD"
         android:textSize="16sp"
         android:textStyle="bold" />

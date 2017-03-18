@@ -25,7 +25,7 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.InThea
     public static class InTheatersViewHolder extends RecyclerView.ViewHolder {
 
         ImageView thumbnail;
-        TextView trailerNo;
+        TextView trailerNo; //trailer number(1,2,3...) will be shown at the centre of play button image
 
         public InTheatersViewHolder(View v) {
             super(v);

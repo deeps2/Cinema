@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //add dummy content
         addSampleContent();
 
         //setting top recycler view (In Theaters)

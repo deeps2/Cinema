@@ -21,12 +21,12 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
     public static class InTheatersViewHolder extends RecyclerView.ViewHolder {
 
         ImageView poster;
-        TextView moviename;
+        TextView movieName;
 
         public InTheatersViewHolder(View v) {
             super(v);
             poster = (ImageView) v.findViewById(R.id.poster);
-            moviename = (TextView) v.findViewById(R.id.name);
+            movieName = (TextView) v.findViewById(R.id.name);
         }
     }
 
@@ -46,14 +46,14 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.InTheatersViewHolde
     public void onBindViewHolder(InTheatersViewHolder holder, final int position) {
 
         holder.poster.setImageResource(mInTheaterMovieList.get(position).getmThumbnailImage());
-        holder.moviename.setText(mInTheaterMovieList.get(position).getmName());
+        holder.movieName.setText(mInTheaterMovieList.get(position).getmName());
 
         holder.poster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, MovieDetailActivity.class);
-                i.putExtra("CLICKED_MOVIE", mInTheaterMovieList.get(position));
-                context.startActivity(i);
+                i.putExtra("CLICKED_MOVIE", mInTheaterMovieList.get(position)); //put the Movie object inside Intent which was clicked
+                context.startActivity(i); //start a
             }
         });
     }

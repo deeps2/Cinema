@@ -41,10 +41,11 @@ public class MovieDetailActivity extends YouTubeBaseActivity implements YouTubeP
     String clickedTrailerUrl;
 
     private MyPlayerStateChangeListener playerStateChangeListener;
-    boolean playerReleased = true;
 
-    boolean backpressed = false;
-    boolean potraitMode = true;
+    //boolean variables to find out whether player instance was released or not; whether back button was pressed or not; whether device is in fullscreen mode or not
+    boolean playerReleased = true;
+    boolean backPressed = false;
+    boolean portraitMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +76,13 @@ public class MovieDetailActivity extends YouTubeBaseActivity implements YouTubeP
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(mTrailerListRecyclerView);
 
+        //set movie name, its summary, duration & ratings
         mMovieName.setText(mMovie.getmName());
         mMovieDescription.setText(mMovie.getmDescription());
         mRuntime.setText("Running Time : " + mMovie.getmDuration());
 
-        //for upcoming movies, ratings are -1.0, so hide rating bar
         if (mMovie.getmRating() == -1.0) {
-            mRatingBar.setVisibility(GONE);
+            mRatingBar.setVisibility(GONE); //for upcoming movies, ratings are -1.0, so hide rating bar
         } else {
             mRatingBar.setRating(mMovie.getmRating());
         }
@@ -99,39 +100,39 @@ public class MovieDetailActivity extends YouTubeBaseActivity implements YouTubeP
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
         mPlayer = player;
-        playerReleased = false;
+        playerReleased = false; //false because Initialisation is successful, it will be false during mPlayer.release()
 
         //for handling YouTube Player State
         mPlayer.setPlayerStateChangeListener(playerStateChangeListener);
 
         /*
-             state of YouTube view full screen, if it's true it means player is gone to full screen mode and if it
-             is false it means the player is switched back from full screen mode and this listener is
-             called both times when you go to full screen mode and come back from full screen mode with
-             true and false value respectively.
+        state of YouTube view full screen, if it's true it means player is gone to full screen mode and if it
+        is false it means the player is switched back from full screen mode and this listener is
+        called both times when you go to full screen mode and come back from full screen mode with
+        true and false value respectively.
          */
         mPlayer.setOnFullscreenListener(new YouTubePlayer.OnFullscreenListener() {
             @Override
             public void onFullscreen(boolean b) {
                 if (b) {   //player went to full screen mode
 
-                    backpressed = false;  //this is needed in order to differentiate 2 events
-                                          // "1)when back was click in full screen mode(then player should stop)" &
-                                          //"2)when device was rotated from landscape to portrait mode(then player shouldn't stop)"
+                    backPressed = false;  //this is needed in order to differentiate 2 events
+                                          // "(1)when back was click in full screen mode(then player should stop)" AND
+                                          //"(2)when device was rotated from landscape to portrait mode(then player shouldn't stop)"
 
-                    potraitMode = false; //as player is in full screen(i.e landscape mode), so set portraitMode boolean to false
+                    portraitMode = false; //as player is in full screen(i.e landscape mode), so set portraitMode boolean to false
 
                 } else { // player exit from full screen mode
 
-                    if(backpressed) { //check whether player exit from full screen mode because "back was pressed" or "device was rotated"(above 2 events)
+                    if(backPressed) { //check whether player exit from full screen mode because "back was pressed" or "device was rotated"(above 2 events)
                         youTubeView.setVisibility(View.INVISIBLE);  //TRUE means back button was pressed in full screen mode, so stop the player
                         mPlayer.release();
                         playerReleased = true;   //as player is released now, so set playerReleased = true;
-                        backpressed = false;    //reset backpressed boolean to initial state i.e false
-                        potraitMode = true;    //as device is now in portrait mode, so set potraitMode = true;
+                        backPressed = false;    //reset backPressed boolean to initial state i.e false
+                        portraitMode = true;    //as player is not running in full screen mode, so set portraitMode = true;
 
                     }else    //FALSE means back button was not pressed and player exit from full screen mode because device was rotated. In this case don't stop the player
-                        potraitMode = true;  // //as device is now in portrait mode, so set potraitMode = true;
+                        portraitMode = true;  // as player is not running in full screen mode, so set portraitMode = true;
                 }
             }
         });
@@ -169,13 +170,13 @@ public class MovieDetailActivity extends YouTubeBaseActivity implements YouTubeP
     @Override
     public void onBackPressed() {
 
-        backpressed = true;
+        backPressed = true;
 
         if (youTubeView.getVisibility() == View.INVISIBLE) { //if YouTube view is invisible, go to previous activity
             super.onBackPressed();
         } else { // If YouTube view is visible
 
-            if(!potraitMode)            //If YouTube view is visible and its in landscape mode when back was pressed
+            if(!portraitMode)            //If YouTube view is visible and its in full screen mode when back was pressed
                  mPlayer.setFullscreen(false); //exit from fullscreen mode. This will also trigger mPlayer.setOnFullscreenListener()
 
             else //If YouTube view is visible and its in portrait mode when back was pressed.
@@ -184,8 +185,8 @@ public class MovieDetailActivity extends YouTubeBaseActivity implements YouTubeP
                 youTubeView.setVisibility(View.INVISIBLE);
                 mPlayer.release();
                 playerReleased = true;        //as player is now released, so set the corresponding boolean variable to true
-                backpressed = false;         //reset the backpressed variable to initial value(which was false)
-                potraitMode = true;         //as now device is in portrait mode, so set the corresponding boolean variable to true
+                backPressed = false;         //reset the backPressed variable to initial value(false)
+                portraitMode = true;         //reset hte portraitMode variable to initial value(true)
             }
         }
     }

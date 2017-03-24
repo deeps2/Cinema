@@ -1,6 +1,4 @@
-# Cinema (LetsMath Assignment)<img src="app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-
-- apk(debug-unsigned): https://drive.google.com/open?id=0B2nGf8LzrZuJZ1pRMWtqQUN2eU0
+# Cinema <img src="app/src/main/res/mipmap-hdpi/ic_launcher.png" />
 
 # ScreenShots
 - Portrait Mode </br></br>
@@ -23,21 +21,12 @@ width = 420>&nbsp;&nbsp; </br></br>
 
 # NOTE
 - App works in both portrait and landscape mode
-- I have added comments wherever I find it necessary
-- I have added some dummy data in ArrayList to populate the RecyclerView(see addSampleContent() in MainActivity)
 - 8 movies each under In theaters & Upcoming Movies section
 - Click on a Card to open new activity which shows detail information about that particular movie. The top section consists of a 
 RecyclerView which shows all the movie trailers associated with that movie(Number of trailers are different for each movie) 
 - Do horizontal swipe to go through each movie trailer and click on it to play the trailer
 - I was going through some videos on ExoPlayer library & I came to know that YouTube API also uses it internally. So I have used YouTube API
 for video handling
-
-<b>Ps</b>: If you want me to implement own mediaplayer using ExoPlayer, it will take more time as it requires too many callbacks to be implemented
-and a lot of things need to be care of especially creating .m3u8 playlist and corresopondig .ts files and hosting them on a web server
-(if using HLS format). Plus adding all the buttons to play,pause,menu for video quality,and implementing their functionality, handling 
-configuration changes and network disconnection-reconnection events also. Most of these things are included in YouTube API. 
-
-I should have moved all the hardcoding to respective resource files but I didn't get enough time to do so. Sorry for that.
 
 # Components Used
 - Gradient Background

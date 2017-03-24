@@ -1,4 +1,5 @@
 # Cinema <img src="app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+- Movie app which shows trailers and plot for upcoming and In-theater movies
 
 # ScreenShots
 - Portrait Mode </br></br>
